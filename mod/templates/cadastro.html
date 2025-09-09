@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <style>
+        .container{
+            width: 300px;
+            right: 300px;
+        }
+        .end{
+            text-align: end;
+        }
+
+    </style>
+</head>
+<body>
+     <div class="container">
+     <h3><I>Cadastro</I></h3>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+
+                {{ form.nome_completo.label(class='end') }}
+                {{ form.nome_completo() }}
+
+                <p>{{ form.data_nascimento.label(class='end') }}
+                {{ form.data_nascimento() }}</p>
+
+                <p>{{ form.UF.label(class='end') }}
+                {{ form.UF() }}</p>
+                
+                <p>{{ form.email.label(class='end') }}
+                {{ form.email() }}</p>
+
+                <p>{{ form.senha.label(class='end') }}
+                {{ form.senha() }}</p>
+
+                <p>{{ form.confirmar_senha.label(class='end') }}
+                {{ form.confirmar_senha() }}</p>
+
+                <div class="end">{{ form.btn() }}</div>
+        </form>
+    </div>
+</body>
+</html>

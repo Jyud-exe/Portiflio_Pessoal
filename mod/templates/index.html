@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        .end{
+            text-align: end;
+        }
+        .left{
+            text-align: left;
+        }
+        .right{
+            text-align: right;
+        }
+        .center{
+            text-align: center;
+        }
+        .inline{
+            display: inline-block;
+        }
+        .cont {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;}
+      .container{
+        width: 250px;
+        right: 250px;
+      }
+      .esq{
+        margin-left: 50px;
+      }
+      .dir{
+        margin-right: 50px;
+      }
+      .border{
+        border: 2px dashed black;
+        width: 230px;
+      }
+      .top{
+        margin-top: 20px;
+      }
+      .border-line{
+        border: 1px solid black;
+        width: 250px;
+      }
+      .img-container:hover img{
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);}
+    </style>
+    
+
+</head>
+<body>
+    {% if current_user.is_authenticated %}
+        
+        <div class="cont">
+            <a href="{{url_for('sobre')}}"><h2><I>Julia Ribeiro</I></h2></a>
+            <a href="{{url_for('logout')}}"><img src="{{url_for('static', filename='img/saida.png')}}" alt="" style="width: 35px; margin-right: 10px;"></a >
+        </div>
+        <hr style="margin-top: 0%;">
+        <br>
+        <div class="center">
+            <h1><I>PORTIFÓLIO</I></h1>
+            
+            <img src="{{url_for('static', filename='img/icon.png')}}" alt="" style="border-radius: 50%; width: 200px;">
+            <h3 style="margin-top: 5%;"><p>- Estudante autodidata de desenvolvimento back-end  </p>
+                <p>- Apaixonada por tecnologia e curiosa sobre como as coisas funcionam por trás dos sistemas </p> 
+                <p>- Objetivo: iniciar minha carreira como desenvolvedora back-end e evoluir constantemente</p></h3>
+
+        </div>
+        <br><br><br><br>
+        <hr style="margin-top: 5%;">
+        <div class="cont center">
+            <div class="esq">
+                <h3>2+ anos de Experiência</h3>
+                <img src="{{url_for('static', filename='img/pasta.png')}}" style="width: 90px;">
+            </div>
+            <div class="dir">
+                <h1>Dev Back-end</h1>
+                <img src="{{url_for('static', filename='img/dev.png')}}" alt="">
+            </div>
+            <div class="dir">
+                <h3>Contato</h3>
+                <img src="{{url_for('static', filename='img/contato.png')}}" style="width: 90px;">
+            </div>
+        </div>
+        <hr>
+        <div class="center" style="margin-top: 8%;">
+            <h1><u>FORMAÇÃO</u></h1>
+            <h3 style="margin-top: 5%;">- Atualmente estudando Node.js e arquitetura de APIs</h3>
+            <div class="cont" style="margin-top: 5%;">
+                <div class="container img-container">
+                    <a href=""><img src="{{url_for('static', filename='img/python.png')}}" alt=""></a>
+                    <h2>PYTHON</h2>
+                </div>
+                <div class="container img-container">
+                    <a href=""><img src="{{url_for('static', filename='img/sql.png')}}" alt=""></a>
+                    <h2>SQL</h2>
+                </div>
+                <div class="container img-container">
+                    <a href=""><img src="{{url_for('static', filename='img/html.png')}}" alt=""></a>
+                    <h2>HTML</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="center" style="margin-top: 8%;">
+            <h1><u>DESTAQUE</u></h1>
+            <br><br><br>
+            <div class="cont">
+                <div class="border">
+                    <img src="{{url_for('static', filename='img/lojaon.png')}}" alt="">
+                    <h2>API de Ecommerce</h2>
+                    <p>Esta é uma breve descrição do cartão. Você pode personalizar o texto conforme necessário.</p>
+                    <a class="top" href=""><button class="top">Vizualizar</button></a>
+                </div>
+                <div class="border">
+                    <img src="{{url_for('static', filename='img/blogproj.png')}}" alt="">
+                    <h2>Blog</h2>
+                    <p>Esta é uma breve descrição do cartão. Você pode personalizar o texto conforme necessário.</p>
+                    <a href=""><button class="top">Vizualizar</button></a>
+                </div>
+                <div class="border">
+                    <img src="{{url_for('static', filename='img/video.png')}}" alt="">
+                    <h2>Plataforma de Vídeo</h2>
+                    <p>Esta é uma breve descrição do cartão. Você pode personalizar o texto conforme necessário.</p>
+                    <a href=""><button class="top">Vizualizar</button></a>
+                </div>
+                <div class="border">
+                    <img src="{{url_for('static', filename='img/lojaon.png')}}" alt="">
+                    <h2>API de Ecommerce</h2>
+                    <p>Esta é uma breve descrição do cartão. Você pode personalizar o texto conforme necessário.</p>
+                    <a href=""><button class="top">Vizualizar</button></a>
+                </div>
+            </div>
+        </div>
+        <hr style="margin-top: 8%;">
+        <div class="center cont" >
+                <div class="esq">
+                    <h2>FEEDBACK</h2>
+                    <form action="/salvar" method="post">
+                        <input type="text" name="feedback" id="feedback" maxlength="50">
+                        <input type="submit" value="Enviar">
+                        <br><br><br>
+                    </form>
+                </div>
+                <div class="container center" style="margin-bottom: 80px;">
+                    <h2>CONTATO</h2>
+                    <div class="cont center">
+                        <div>
+                        <a href=""><img src="{{url_for('static', filename='img/linkedin.png')}}" alt=""></a>
+                            Linkedln</div>
+                        <div>
+                        <a href=""><img src="{{url_for('static', filename='img/workana.png')}}" alt=""></a>
+                            Workana</div>
+                        <div>
+                        <a href="https://github.com/Jyud-exe"><img src="{{url_for('static', filename='gifs/git.gif')}}" alt=""></a>
+                            GitHub</div>
+                    </div>
+       
+        </div>
+        <div class="container dir">
+            {% for comentario in comentarios %}
+                    <br>
+                    <div class="border-line">
+                    <h3 style="text-align: start; margin-left: 10px;">{{ comentario[0] }}</h3>
+                    <p style="margin-right: 20px;">{{ comentario[1] }}</p>
+                    </div>
+            {% else %}
+                    <br>
+                    <b>Nenhum comentario ainda</b>
+            {% endfor %}
+            <p class="center"><a href=""><button>Ver todos</button></a></p>
+        </div>
+        
+    {% else %}
+        <h2><I>HOME</I></h2>
+        <hr>
+        <div class="end">
+            <a href="{{url_for('cad')}}"><button>Inscreva-se</button></a>
+        </div>
+        <div class="container left">
+            <h3><I>Login</I></h3>
+            <form action="" method="post">
+                {{ form.hidden_tag() }}
+
+                {{ form.email.label() }}
+                {{ form.email() }}
+
+                <p>{{ form.senha.label() }}
+                {{ form.senha() }}</p>
+
+                <div class="end"> {{ form.btnsubmit() }}</div>
+               
+            </form>
+        </div>
+        
+    {% endif %}
+</body>
+</html>
