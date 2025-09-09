@@ -1,7 +1,7 @@
 from wtforms import StringField, PasswordField, SubmitField, DateField
 from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired, Email, ValidationError
-from mod.models import User, db, comentarios
+from mod.models import User, db
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
@@ -46,17 +46,3 @@ class loginForm(FlaskForm):
                 raise ValidationError('Senha Incorreta!')
         else:
             raise ValidationError('Usuario Invalido!')
-        
-class feedForms(FlaskForm):
-    comentario = StringField('Comentário')
-    btncom = SubmitField('Enviar')
-
-    def save(self, user_id):
-        feedback = comentarios(
-            coment=self.comentario.data,
-            user_id=self.user_id.data
-        )
-
-        db.session.add(feedback)
-        db.session.commit()
-        return feedback
