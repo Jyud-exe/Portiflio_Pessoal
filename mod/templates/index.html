@@ -50,9 +50,11 @@
         transform: scale(1.1);}
     </style>
     
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 <body>
+    
     {% if current_user.is_authenticated %}
         
         <div class="cont">
@@ -129,10 +131,10 @@
                     <a href=""><button class="top">Vizualizar</button></a>
                 </div>
                 <div class="border">
-                    <img src="{{url_for('static', filename='img/lojaon.png')}}" alt="">
-                    <h2>API de Ecommerce</h2>
+                    <img src="{{url_for('static', filename='img/programa.png')}}" alt="">
+                    <h2>Projetos de Estudo</h2>
                     <p>Esta é uma breve descrição do cartão. Você pode personalizar o texto conforme necessário.</p>
-                    <a href=""><button class="top">Vizualizar</button></a>
+                    <a href="https://github.com/Jyud-exe/ProjetodeEstudo"><button class="top">Vizualizar</button></a>
                 </div>
             </div>
         </div>
@@ -150,7 +152,7 @@
                     <h2>CONTATO</h2>
                     <div class="cont center">
                         <div>
-                        <a href=""><img src="{{url_for('static', filename='img/linkedin.png')}}" alt=""></a>
+                        <a href="https://www.linkedin.com/in/shefeitch-julia-ribeiro-150943383/"><img src="{{url_for('static', filename='img/linkedin.png')}}" alt=""></a>
                             Linkedln</div>
                         <div>
                         <a href=""><img src="{{url_for('static', filename='img/workana.png')}}" alt=""></a>

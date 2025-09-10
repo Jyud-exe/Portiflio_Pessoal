@@ -31,6 +31,7 @@ def cad():
 
 @app.route('/logout')
 def logout():
+    flash('Encerrar Sessão?', 'warning')
     logout_user()
     return redirect(url_for('home'))
 
@@ -40,10 +41,9 @@ def sobre():
 
 @app.route('/salvar', methods=['POST'])
 def salvar():
-
     form = request.form.get('feedback', '').strip()
     if not form:
-        flash('Comentario vazio não pode ser enviado.')
+        flash('Mensagem vazia invalida.')
         return redirect(url_for('home'))
     user = current_user.nome
     user_id = current_user.id
