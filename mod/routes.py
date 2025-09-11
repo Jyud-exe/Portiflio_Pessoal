@@ -7,6 +7,11 @@ import sqlite3
 @app.route('/', methods=['GET', 'POST'])
 def home():
     form = loginForm()
+    cadform = cadForm()
+    if cadform.validate_on_submit():
+        user = cadform.save()
+        login_user(user, remember=True)
+        return redirect(url_for('home'))
     if form.validate_on_submit():
         user = form.login()
         login_user(user, remember=True)
@@ -17,17 +22,8 @@ def home():
         cursor.execute('SELECT user, mensagem FROM comentarios ORDER BY id DESC LIMIT 2') 
         comentarios = cursor.fetchall()
         print(comentarios)
-    return render_template('index.html', form=form, comentarios=comentarios)
+    return render_template('index.html', form=form, cadform=cadform, comentarios=comentarios)
 
-
-@app.route('/cadastro', methods=['GET', 'POST'])
-def cad():
-    form = cadForm() 
-    if form.validate_on_submit():
-        user = form.save()
-        login_user(user, remember=True)
-        return redirect(url_for('home'))
-    return render_template('cadastro.html', form=form)
 
 @app.route('/logout')
 def logout():
@@ -35,9 +31,11 @@ def logout():
     logout_user()
     return redirect(url_for('home'))
 
+
 @app.route('/sobre')
 def sobre():
     return render_template('sobre.html')
+
 
 @app.route('/lista')
 def lista():
@@ -46,6 +44,7 @@ def lista():
         cursor.execute('SELECT user, mensagem FROM comentarios ORDER BY id DESC')
         comentarios = cursor.fetchall()
         return render_template('lista.html', comentarios=comentarios)
+
 
 @app.route('/salvar', methods=['POST'])
 def salvar():

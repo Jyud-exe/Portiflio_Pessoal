@@ -61,7 +61,7 @@
                     <img src="{{url_for('static', filename='img/programa.png')}}" alt="">
                     <h2>Projetos de Estudo</h2>
                     <p>Acervo de projetos de estudo e práticas. Aqui, aplico e aprofundo meus conhecimentos em Back end.</p>
-                    <a href="https://github.com/Jyud-exe"><button class="top">Vizualizar</button></a>
+                    <a href="https://github.com/Jyud-exe?tab=repositories"><button class="top">Vizualizar</button></a>
                 </div>
         </div>
         <hr style="margin-top: 8%;">
@@ -69,7 +69,7 @@
                 <div class="esq">
                     <h2>FEEDBACK</h2>
                     <form action="/salvar" method="post">
-                        <input type="text" name="feedback" id="feedback" maxlength="50">
+                        <input type="text" name="feedback" id="feedback" maxlength="100">
                         <input type="submit" value="Enviar">
                         <br><br><br>
                     </form>
@@ -78,7 +78,7 @@
                     <h2>CONTATO</h2>
                     <div class="cont center">
                         <div>
-                        <a href="https://www.linkedin.com/in/shefeitch-julia-ribeiro-150943383/"><img src="{{url_for('static', filename='img/linkedin.png')}}" alt=""></a>
+                        <a href="https://www.linkedin.com/in/shefeitch-julia-ribeiro-150943383"><img src="{{url_for('static', filename='img/linkedin.png')}}" alt=""></a>
                             Linkedln</div>
                         <div>
                         <a href=""><img src="{{url_for('static', filename='img/workana.png')}}" alt=""></a>
@@ -98,20 +98,18 @@
                     </div>
             {% else %}
                     <br>
-                    <b>Nenhum comentario ainda</b>
+                    <b>Nenhum feedback ainda</b>
             {% endfor %}
             <p class="center"><a href="{{url_for('lista')}}"><button>Ver todos</button></a></p>
         </div>
-        
+    
     {% else %}
         <h2><I>HOME</I></h2>
         <hr>
-        <div class="end">
-            <a href="{{url_for('cad')}}"><button>Inscreva-se</button></a>
-        </div>
-        <div class="container left">
+        <div class="cont">
+        <div class="container left" style="margin-bottom: 150px;">
             <h3><I>Login</I></h3>
-            <form action="" method="post">
+            <form action="/" method="post">
                 {{ form.hidden_tag() }}
 
                 {{ form.email.label() }}
@@ -124,6 +122,30 @@
                
             </form>
         </div>
+        <div class="container right">
+        <h3><I>Cadastro</I></h3>
+        <form action="/" method="post">
+            {{ form.hidden_tag() }}
+
+                {{ cadform.nome_completo.label(class='end') }}
+                {{ cadform.nome_completo() }}
+
+                <p>{{ cadform.data_nascimento.label(class='end') }}
+                {{ cadform.data_nascimento() }}</p>
+
+                <p>{{ cadform.UF.label(class='end') }}
+                {{ cadform.UF() }}</p>
+                
+                <p>{{ cadform.email.label(class='end') }}
+                {{ cadform.email() }}</p>
+
+                <p>{{ cadform.senha.label(class='end') }}
+                {{ cadform.senha() }}</p>
+
+                <div class="end">{{ cadform.btn() }}</div>
+        </form>
+        </div>
+        </div>   
         
     {% endif %}
 
