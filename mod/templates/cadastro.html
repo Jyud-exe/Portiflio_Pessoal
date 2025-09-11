@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
-    <style>
-        .container{
-            width: 300px;
-            right: 300px;
-        }
-        .end{
-            text-align: end;
-        }
-
-    </style>
-</head>
-<body>
+{% extends "reprise.html"%}
+{% block content %}
      <div class="container">
      <h3><I>Cadastro</I></h3>
         <form action="" method="post">
@@ -42,5 +26,4 @@
                 <div class="end">{{ form.btn() }}</div>
         </form>
     </div>
-</body>
-</html>
+{% endblock %}

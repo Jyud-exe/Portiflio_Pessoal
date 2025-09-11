@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        .end{
+            text-align: end;
+        }
+        .left{
+            text-align: left;
+        }
+        .right{
+            text-align: right;
+        }
+        .center{
+            text-align: center;
+        }
+        .inline{
+            display: inline-block;
+        }
+        .cont {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;}
+      .container{
+        width: 250px;
+        right: 250px;
+      }
+      .esq{
+        margin-left: 50px;
+      }
+      .dir{
+        margin-right: 50px;
+      }
+      .border{
+        border: 2px dashed black;
+        margin-left: 40%;
+        margin-right: 40%;
+      }
+      .top{
+        margin-top: 20px;
+      }
+      .border-line{
+        border: 1px solid black;
+        width: 250px;
+      }
+      .img-container:hover img{
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);}
+    </style>
+
+</head>
+<body>
+    
+ {% block content %} {% endblock %}
+
+</body>
+</html>

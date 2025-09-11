@@ -39,6 +39,14 @@ def logout():
 def sobre():
     return render_template('sobre.html')
 
+@app.route('/lista')
+def lista():
+    with sqlite3.connect('database.db') as conn:
+        cursor = conn.cursor()
+        cursor.execute('SELECT user, mensagem FROM comentarios ORDER BY id DESC')
+        comentarios = cursor.fetchall()
+        return render_template('lista.html', comentarios=comentarios)
+
 @app.route('/salvar', methods=['POST'])
 def salvar():
     form = request.form.get('feedback', '').strip()

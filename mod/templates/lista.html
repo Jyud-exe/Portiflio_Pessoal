@@ -1,0 +1,18 @@
+{% extends "reprise.html" %}
+{% block content %}
+    <div class="cont">
+        <h1><i>FEEDBACKS</i></h1>
+        <a href="{{url_for('home')}}">voltar</a>
+    </div>
+    <br>
+    <div class="">
+        <hr>
+        {% for comentario in comentarios %}
+                <h2>{{ comentario[0] }}</h2>
+                <div style="font-size: 20px;">
+                <p>{{ comentario[1] }}</p>
+                </div>
+        <hr>
+        {% endfor %}
+    </div>
+{% endblock %}

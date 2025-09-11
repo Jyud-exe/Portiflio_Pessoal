@@ -1,59 +1,5 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <style>
-        .end{
-            text-align: end;
-        }
-        .left{
-            text-align: left;
-        }
-        .right{
-            text-align: right;
-        }
-        .center{
-            text-align: center;
-        }
-        .inline{
-            display: inline-block;
-        }
-        .cont {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;}
-      .container{
-        width: 250px;
-        right: 250px;
-      }
-      .esq{
-        margin-left: 50px;
-      }
-      .dir{
-        margin-right: 50px;
-      }
-      .border{
-        border: 2px dashed black;
-        width: 230px;
-      }
-      .top{
-        margin-top: 20px;
-      }
-      .border-line{
-        border: 1px solid black;
-        width: 250px;
-      }
-      .img-container:hover img{
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);}
-    </style>
-    
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-</head>
-<body>
+{% extends"reprise.html"%}
+{% block content %}
     
     {% if current_user.is_authenticated %}
         
@@ -111,32 +57,12 @@
         <div class="center" style="margin-top: 8%;">
             <h1><u>DESTAQUE</u></h1>
             <br><br><br>
-            <div class="cont">
-                <div class="border">
-                    <img src="{{url_for('static', filename='img/lojaon.png')}}" alt="">
-                    <h2>API de Ecommerce</h2>
-                    <p>Esta é uma breve descrição do cartão. Você pode personalizar o texto conforme necessário.</p>
-                    <a class="top" href=""><button class="top">Vizualizar</button></a>
-                </div>
-                <div class="border">
-                    <img src="{{url_for('static', filename='img/blogproj.png')}}" alt="">
-                    <h2>Blog</h2>
-                    <p>Esta é uma breve descrição do cartão. Você pode personalizar o texto conforme necessário.</p>
-                    <a href=""><button class="top">Vizualizar</button></a>
-                </div>
-                <div class="border">
-                    <img src="{{url_for('static', filename='img/video.png')}}" alt="">
-                    <h2>Plataforma de Vídeo</h2>
-                    <p>Esta é uma breve descrição do cartão. Você pode personalizar o texto conforme necessário.</p>
-                    <a href=""><button class="top">Vizualizar</button></a>
-                </div>
                 <div class="border">
                     <img src="{{url_for('static', filename='img/programa.png')}}" alt="">
                     <h2>Projetos de Estudo</h2>
-                    <p>Esta é uma breve descrição do cartão. Você pode personalizar o texto conforme necessário.</p>
-                    <a href="https://github.com/Jyud-exe/ProjetodeEstudo"><button class="top">Vizualizar</button></a>
+                    <p>Acervo de projetos de estudo e práticas. Aqui, aplico e aprofundo meus conhecimentos em Back end.</p>
+                    <a href="https://github.com/Jyud-exe"><button class="top">Vizualizar</button></a>
                 </div>
-            </div>
         </div>
         <hr style="margin-top: 8%;">
         <div class="center cont" >
@@ -174,7 +100,7 @@
                     <br>
                     <b>Nenhum comentario ainda</b>
             {% endfor %}
-            <p class="center"><a href=""><button>Ver todos</button></a></p>
+            <p class="center"><a href="{{url_for('lista')}}"><button>Ver todos</button></a></p>
         </div>
         
     {% else %}
@@ -200,5 +126,5 @@
         </div>
         
     {% endif %}
-</body>
-</html>
+
+{% endblock %}
