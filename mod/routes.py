@@ -12,7 +12,7 @@ def home():
         user = cadform.save()
         login_user(user, remember=True)
         return redirect(url_for('home'))
-    if form.validate_on_submit():
+    elif form.validate_on_submit():
         user = form.login()
         login_user(user, remember=True)
         return redirect(url_for('home', id=None))
