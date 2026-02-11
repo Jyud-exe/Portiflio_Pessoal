@@ -4,16 +4,16 @@
     {% if current_user.is_authenticated %}
         
         <div class="cont">
-            <a href="{{url_for('sobre')}}"><h2><I>Julia Ribeiro</I></h2></a>
+            <h1><I>PORTIFÓLIO</I></h1>
             <a href="{{url_for('logout')}}"><img src="{{url_for('static', filename='img/saida.png')}}" alt="" style="width: 35px; margin-right: 10px;"></a >
         </div>
         <hr style="margin-top: 0%;">
         <br>
         <div class="center">
-            <h1><I>PORTIFÓLIO</I></h1>
             
-            <img src="{{url_for('static', filename='img/icon.png')}}" alt="" style="border-radius: 50%; width: 200px;">
-            <h3 style="margin-top: 5%;"><p>- Estudante autodidata de desenvolvimento back-end  </p>
+            <h2><a href="{{url_for('sobre')}}" class="black"><h2><I>Julia Ribeiro</I></a></h2>
+            <img src="{{url_for('static', filename='img/icon.png')}}" alt="" style="border-radius: 50%; height: 200px; width: 200px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
+            <h3 style="margin-top: 5%;"><p>- Olá, sou estudante autodidata de desenvolvimento back-end  </p>
                 <p>- Apaixonada por tecnologia e curiosa sobre como as coisas funcionam por trás dos sistemas </p> 
                 <p>- Objetivo: iniciar minha carreira como desenvolvedora back-end e evoluir constantemente</p></h3>
 
@@ -35,35 +35,59 @@
             </div>
         </div>
         <hr>
-        <div class="center" style="margin-top: 8%;">
-            <h1><u>FORMAÇÃO</u></h1>
-            <h3 style="margin-top: 5%;">- Atualmente estudando Node.js e arquitetura de APIs</h3>
-            <div class="cont" style="margin-top: 5%;">
-                <div class="container img-container">
-                    <a href=""><img src="{{url_for('static', filename='img/python.png')}}" alt=""></a>
-                    <h2>PYTHON</h2>
-                </div>
-                <div class="container img-container">
-                    <a href=""><img src="{{url_for('static', filename='img/sql.png')}}" alt=""></a>
-                    <h2>SQL</h2>
-                </div>
-                <div class="container img-container">
-                    <a href=""><img src="{{url_for('static', filename='img/html.png')}}" alt=""></a>
-                    <h2>HTML</h2>
-                </div>
-            </div>
-        </div>
+        
 
         <div class="center" style="margin-top: 8%;">
             <h1><u>DESTAQUE</u></h1>
             <br><br><br>
+            <div class="cont">
                 <div class="border">
-                    <img src="{{url_for('static', filename='img/programa.png')}}" alt="">
-                    <h2>Projetos de Estudo</h2>
-                    <p>Acervo de projetos de estudo e práticas. Aqui, aplico e aprofundo meus conhecimentos em Back end.</p>
+                    <video width="320" height="240" autoplay loop muted style="border: 2px solid black;">
+                        <source src="{{url_for('static', filename='video/port.mp4')}}">
+                    </video>
+                    <h2>Portifólio Pessoal</h2>
                     <a href="https://github.com/Jyud-exe?tab=repositories"><button class="top">Vizualizar</button></a>
                 </div>
+                <div class="border">
+                    <img src="{{url_for('static', filename='img/programa.png')}}" alt="">
+                    <h2>Flask</h2>
+                    <p>Aqui aplico e aprofundo meus conhecimentos em Flask.</p>
+                    <a href="https://github.com/Jyud-exe?tab=repositories"><button class="top">Vizualizar</button></a>
+                </div>
+                <div class="border">
+                    <img src="{{url_for('static', filename='img/programa.png')}}" alt="">
+                    <h2>Todos os Projetos</h2>
+                    <p>Todos os projetos desenvolvidos.</p>
+                    <a href="https://github.com/Jyud-exe?tab=repositories"><button class="top">Vizualizar</button></a>
+                </div>
+            </div>
         </div>
+
+
+        <br><br><br>
+        <div class="center" style="margin-top: 8%;">
+            <h1><u>CERTIFICAÇÕES</u></h1>
+            <h3 style="margin-top: 5%;">- Atualmente estudando Java e arquitetura de APIs</h3>
+            <div class="cont" style="margin-top: 5%;">
+                <div class="container img-container">
+                        <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-7b3f009f-57eb-4455-a3dd-20943d4e3da4.jpg"><img src="{{url_for('static', filename='img/CertificadoAWS.png')}}" alt="" style="width: 300px; height: 250px; border: 2px solid black;"></a>
+                    <h2>AWS</h2>
+                </div>
+
+                <div class="container img-container">
+                        <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-7b3f009f-57eb-4455-a3dd-20943d4e3da4.jpg"><img src="{{url_for('static', filename='img/CertificadoAWS.png')}}" alt="" style="width: 300px; height: 250px; border: 2px solid black;"></a>
+                    <h2>AWS</h2>
+                </div>
+
+                <div class="container img-container">
+                        <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-7b3f009f-57eb-4455-a3dd-20943d4e3da4.jpg"><img src="{{url_for('static', filename='img/CertificadoAWS.png')}}" alt="" style="width: 300px; height: 250px; border: 2px solid black;"></a>
+                    <h2>AWS</h2>
+                </div>
+            </div>
+            <br><br>
+            <a href=""><button style="width: 100px;">Mais</button></a>
+        </div>
+
         <hr style="margin-top: 8%;">
         <div class="center cont" >
                 <div class="esq">
