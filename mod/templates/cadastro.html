@@ -1,0 +1,30 @@
+{% extends "reprise.html" %}
+{% block content %}
+<h2><i>HOME</i></h2>
+<hr>
+<a  href="{{url_for('home')}}"><button class="end">Voltar</button></a>
+<div class="container">
+        <h3><I>Cadastro</I></h3>
+        <form action="/" method="post">
+            {{ cadform.hidden_tag() }}
+
+                {{ cadform.nome_completo.label(class='end') }}
+                {{ cadform.nome_completo() }}
+
+                <p>{{ cadform.data_nascimento.label(class='end') }}
+                {{ cadform.data_nascimento() }}</p>
+
+                <p>{{ cadform.UF.label(class='end') }}
+                {{ cadform.UF() }}</p>
+                
+                <p>{{ cadform.email.label(class='end') }}
+                {{ cadform.email() }}</p>
+
+                <p>{{ cadform.senha.label(class='end') }}
+                {{ cadform.senha() }}</p>
+
+                <div class="end">{{ cadform.btn() }}</div>
+        </form>
+        </div>
+
+{% endblock %}

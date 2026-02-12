@@ -13,12 +13,16 @@
             
             <h2><a href="{{url_for('sobre')}}" class="black"><h2><I>Julia Ribeiro</I></a></h2>
             <img src="{{url_for('static', filename='img/icon.png')}}" alt="" style="border-radius: 50%; height: 200px; width: 200px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
-            <h3 style="margin-top: 5%;"><p>- Olá, sou estudante autodidata de desenvolvimento back-end  </p>
-                <p>- Apaixonada por tecnologia e curiosa sobre como as coisas funcionam por trás dos sistemas </p> 
-                <p>- Objetivo: iniciar minha carreira como desenvolvedora back-end e evoluir constantemente</p></h3>
+            
+            <div>
+                <br><br><br><br>
+                Olá! :)
+                <p>Sou Juliana, desenvolvedora com formação técnica em Desenvolvimento Web.</p>
+                <p>Meu objetivo é iniciar minha trajetória profissional como desenvolvedora Back-end e evoluir de forma consistente na área.</p>
+            </div>
 
         </div>
-        <br><br><br><br>
+        <br><br><br>
         <hr style="margin-top: 5%;">
         <div class="cont center">
             <div class="esq">
@@ -39,10 +43,13 @@
 
         <div class="center" style="margin-top: 8%;">
             <h1><u>DESTAQUE</u></h1>
+            <br><br>
+                <p>Possuo experiência prática construída por meio de estudos contínuos,
+                <p>projetos próprios e aplicação constante dos conceitos em sistemas reais.</p>
             <br><br><br>
             <div class="cont">
                 <div class="border">
-                    <video width="320" height="240" autoplay loop muted style="border: 2px solid black;">
+                    <video width="350" height="270" autoplay loop muted style="border: 2px solid black;">
                         <source src="{{url_for('static', filename='video/port.mp4')}}">
                     </video>
                     <h2>Portifólio Pessoal</h2>
@@ -67,7 +74,10 @@
         <br><br><br>
         <div class="center" style="margin-top: 8%;">
             <h1><u>CERTIFICAÇÕES</u></h1>
-            <h3 style="margin-top: 5%;">- Atualmente estudando Java e arquitetura de APIs</h3>
+            <br><br>
+            <p>Cursos complementares realizados de forma autônoma, demonstrando</p> 
+            <p>minha iniciativa e compromisso com o aprendizado contínuo.</p> 
+            
             <div class="cont" style="margin-top: 5%;">
                 <div class="container img-container">
                         <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-7b3f009f-57eb-4455-a3dd-20943d4e3da4.jpg"><img src="{{url_for('static', filename='img/CertificadoAWS.png')}}" alt="" style="width: 300px; height: 250px; border: 2px solid black;"></a>
@@ -79,7 +89,7 @@
                     <h2>AWS</h2>
                 </div>
 
-                <div class="container img-container">
+                <div style="margin-right: 50px;" class="container img-container">
                         <a href="https://udemy-certificate.s3.amazonaws.com/image/UC-7b3f009f-57eb-4455-a3dd-20943d4e3da4.jpg"><img src="{{url_for('static', filename='img/CertificadoAWS.png')}}" alt="" style="width: 300px; height: 250px; border: 2px solid black;"></a>
                     <h2>AWS</h2>
                 </div>
@@ -130,8 +140,8 @@
     {% else %}
         <h2><I>HOME</I></h2>
         <hr>
-        <div class="cont">
-        <div class="container left" style="margin-bottom: 150px;">
+        <div class="cont center">
+        <div class="container">
             <h3><I>Login</I></h3>
             <form action="/" method="post">
                 {{ form.hidden_tag() }}
@@ -143,31 +153,8 @@
                 {{ form.senha() }}</p>
 
                 <div class="end"> {{ form.btnsubmit() }}</div>
-               
+                <a href="{{url_for('cadastro')}}">Cadastrar</a>
             </form>
-        </div>
-        <div class="container right">
-        <h3><I>Cadastro</I></h3>
-        <form action="/" method="post">
-            {{ form.hidden_tag() }}
-
-                {{ cadform.nome_completo.label(class='end') }}
-                {{ cadform.nome_completo() }}
-
-                <p>{{ cadform.data_nascimento.label(class='end') }}
-                {{ cadform.data_nascimento() }}</p>
-
-                <p>{{ cadform.UF.label(class='end') }}
-                {{ cadform.UF() }}</p>
-                
-                <p>{{ cadform.email.label(class='end') }}
-                {{ cadform.email() }}</p>
-
-                <p>{{ cadform.senha.label(class='end') }}
-                {{ cadform.senha() }}</p>
-
-                <div class="end">{{ cadform.btn() }}</div>
-        </form>
         </div>
         </div>   
         

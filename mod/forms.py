@@ -7,7 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 class cadForm(FlaskForm):
     nome_completo = StringField('Nome Completo', validators=[DataRequired()])
-    data_nascimento = DateField('Data de Nascimento', validators=[DataRequired()])
+    data_nascimento = DateField('Nascimento', validators=[DataRequired()])
     UF = StringField('UF', validators=[DataRequired()])
     email = StringField('E-mail', validators=[DataRequired(), Email()])
     senha = PasswordField('Senha', validators=[DataRequired()])

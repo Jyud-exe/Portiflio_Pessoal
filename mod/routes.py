@@ -21,8 +21,13 @@ def home():
         cursor.execute('CREATE TABLE IF NOT EXISTS comentarios (id INTEGER PRIMARY KEY AUTOINCREMENT, mensagem TEXT NOT NULL, user TEXT, user_id INTEGER)')
         cursor.execute('SELECT user, mensagem FROM comentarios ORDER BY id DESC LIMIT 2') 
         comentarios = cursor.fetchall()
-        print(comentarios)
     return render_template('index.html', form=form, cadform=cadform, comentarios=comentarios)
+
+@app.route('/cadastro')
+def cadastro():
+    cadform = cadForm()
+    return render_template('cadastro.html', cadform=cadform)
+    
 
 
 @app.route('/logout')
