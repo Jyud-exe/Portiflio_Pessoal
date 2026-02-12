@@ -1,4 +1,4 @@
-﻿# Gestor de Tarefas com Flask
+﻿# Portifólio Pessoal com Flask
 
 Projeto de **portfólio** desenvolvido com **Flask** para demonstrar habilidades em desenvolvimento back-end. A aplicação conta com **sistema de autenticação (login e cadastro), organização de rotas, renderização de templates e integração entre servidor e interface**, evidenciando prática com aplicações web completas.
 
