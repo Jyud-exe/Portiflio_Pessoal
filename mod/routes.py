@@ -7,28 +7,29 @@ import sqlite3
 @app.route('/', methods=['GET', 'POST'])
 def home():
     form = loginForm()
-    cadform = cadForm()
-    if cadform.validate_on_submit():
-        user = cadform.save()
-        login_user(user, remember=True)
-        return redirect(url_for('home'))
-    elif form.validate_on_submit():
+    if form.validate_on_submit():
+        print("Formulário Login!")
         user = form.login()
         login_user(user, remember=True)
-        return redirect(url_for('home', id=None))
     with sqlite3.connect('database.db') as conn:
         cursor = conn.cursor()
         cursor.execute('CREATE TABLE IF NOT EXISTS comentarios (id INTEGER PRIMARY KEY AUTOINCREMENT, mensagem TEXT NOT NULL, user TEXT, user_id INTEGER)')
         cursor.execute('SELECT user, mensagem FROM comentarios ORDER BY id DESC LIMIT 2') 
         comentarios = cursor.fetchall()
-    return render_template('index.html', form=form, cadform=cadform, comentarios=comentarios)
+    return render_template('index.html', form=form, comentarios=comentarios)
 
-@app.route('/cadastro')
+@app.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
     cadform = cadForm()
+    if cadform.validate_on_submit():
+        print("Formulário Cadastro!")
+        user = cadform.save()
+        login_user(user, remember=True)
+        return redirect(url_for('home'))
+    else:
+        print(cadform.errors)
     return render_template('cadastro.html', cadform=cadform)
     
-
 
 @app.route('/logout')
 def logout():

@@ -1,7 +1,6 @@
 ﻿# Portifólio Pessoal com Flask
 
-Projeto de **portfólio** desenvolvido com **Flask** para demonstrar habilidades em desenvolvimento back-end. A aplicação conta com **sistema de autenticação (login e cadastro), organização de rotas, renderização de templates e integração entre servidor e interface**, evidenciando prática com aplicações web completas.
-
+Aplicação web desenvolvida com **Flask** para fins de **portfólio**, incluindo **sistema de autenticação com armazenamento seguro de senhas via hash criptográfico, controle de acesso por sessão e organização de código em camadas**. O projeto demonstra conhecimentos práticos em **desenvolvimento Back-end**, segurança de aplicações web e integração com a interface do usuário.
 ---
 
 ## Funcionalidades
@@ -11,8 +10,8 @@ Projeto de **portfólio** desenvolvido com **Flask** para demonstrar habilidades
 - Login e Logout
 - Controle de Sessão
 - Área restrita para usuários autenticados
+- Senhas armazenadas utilizando hash criptográfico
 - Filtros lógicos implementados no back-end
-- Interface simples e funcional
 
 ---
 

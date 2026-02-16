@@ -140,9 +140,8 @@
     {% else %}
         <h2><I>HOME</I></h2>
         <hr>
-        <div class="cont center">
-        <div class="container">
-            <h3><I>Login</I></h3>
+        <div class="center">
+            <h3 class="esq" ><I>Login</I></h3>
             <form action="/" method="post">
                 {{ form.hidden_tag() }}
 
@@ -152,10 +151,10 @@
                 <p>{{ form.senha.label() }}
                 {{ form.senha() }}</p>
 
-                <div class="end"> {{ form.btnsubmit() }}</div>
-                <a href="{{url_for('cadastro')}}">Cadastrar</a>
+                <div class="esq"> {{ form.btnsubmit() }}</div>
+                <br>
+                <a class="esq" href="{{url_for('cadastro')}}">Cadastrar</a>
             </form>
-        </div>
         </div>   
         
     {% endif %}

@@ -1,17 +1,17 @@
 from wtforms import StringField, PasswordField, SubmitField, DateField
 from flask_wtf import FlaskForm
-from wtforms.validators import DataRequired, Email, ValidationError
+from wtforms.validators import DataRequired, Email, ValidationError, EqualTo
 from mod.models import User, db
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
 class cadForm(FlaskForm):
-    nome_completo = StringField('Nome Completo', validators=[DataRequired()])
+    nome_completo = StringField('Nome', validators=[DataRequired()])
     data_nascimento = DateField('Nascimento', validators=[DataRequired()])
     UF = StringField('UF', validators=[DataRequired()])
-    email = StringField('E-mail', validators=[DataRequired(), Email()])
+    email = StringField('E-mail', validators=[DataRequired(message="Email ja cadastrado!"), Email()])
     senha = PasswordField('Senha', validators=[DataRequired()])
-    confirmar_senha = PasswordField('Confirmar Senha', validators=[DataRequired()])
+    confirmar_senha = PasswordField('Confirma Senha', validators=[DataRequired(), EqualTo('senha', message='As senhas devem ser iguais!')])
     btn = SubmitField('Cadastrar')
 
     def save(self):
@@ -33,8 +33,8 @@ class cadForm(FlaskForm):
             return novo_usuario
         
 class loginForm(FlaskForm):
-    email = StringField('E-mail', validators=[DataRequired(), Email()])
-    senha = PasswordField('Senha', validators=[DataRequired()])
+    email = StringField('E-mail:', validators=[DataRequired(), Email()])
+    senha = PasswordField('Senha:', validators=[DataRequired()])
     btnsubmit = SubmitField('Entrar')
 
     def login(self):
